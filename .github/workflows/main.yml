@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [closed]
     branches:
-    - master
+    - main
 env:
   NAME_VERSION_FILE: version
 # Can be named however we want
