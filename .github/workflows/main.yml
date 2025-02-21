@@ -1,0 +1,28 @@
+# Name of the pipeline
+name: Version update pipeline
+
+on:
+  # When pull request
+  pull_request:
+    types: [closed]
+    branches:
+    - master
+env:
+  NAME_VERSION_FILE: version
+# Can be named however we want
+# Can have a lot of jobs
+jobs: 
+  # runs-on: where it run
+  # uses: what library it use
+  validate-branch:
+    runs-on: ubuntu-latest
+    steps:
+        - name: step 1
+        # action
+        # run is necessary
+          run: 
+            echo "name step 1"
+            echo "name step 1 -- second command"
+        - name: step 2
+          run: echo "name step 2"
+          
