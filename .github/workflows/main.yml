@@ -19,18 +19,22 @@ jobs:
     steps:
         # action
         # run is necessary
-  
+        - name: Parse data
+          id: parse-data
+          uses: tj-actions/branch-names@v8 # some library
+
         - name: Print info about actions
           id: repo-info
           run: |
             echo "EVENT NAME    : ${{ github.event_name }}"
             echo "ACTION        : ${{ github.event.action }}"
             echo "IS            : ${{ github.event.pull_request.merged }}"
-            echo "CURRENT BRANCH: ${{ steps.branch-names.outputs.current_branch }}"
+            echo "CURRENT BRANCH: ${{ steps.parse-data.outputs.current_branch }}"
             echo "REF           : ${{ github.ref}}"
             echo "REF NAME      : ${{ github.ref_name}}"
             echo "ACTION        : ${{ github.event.action}}"
-            echo "DEFAULT BRANCH: ${{ github.branch-names.outputs.default_branch  }}"
+            echo "DEFAULT BRANCH: ${{ steps.parse-data.outputs.default_branch }}"
+            echo "Some data     : ${{ steps.parse-data.outputs}}"
   #
   print-data-information:
     runs-on: ubuntu-latest
