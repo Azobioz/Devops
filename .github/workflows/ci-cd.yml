@@ -12,18 +12,21 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Run test
-              run: echo "simple run test"
+              run: |
+                 echo "simple run test"
     smoke:
         name: Smoke-test
         runs-on: ubuntu-latest
         steps:
             - name: Run test
-              run: echo "simple run test"
+              run: |
+               echo "simple run test"
     
     fazz:
         name: Fazzing
         runs-on: ubuntu-latest
         steps:
             - name: Run test
-              run: echo "simple run test"
+              run: |
+                echo "simple run test"
 
